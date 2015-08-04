@@ -1,0 +1,3 @@
+这是通过PrintWriter写的内容，
+并且会覆盖原文件
+这是通过FileWriter追加的文件
