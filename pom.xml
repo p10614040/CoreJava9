@@ -13,7 +13,7 @@
         </excludes>
       </resource>
       <resource>
-        <directory>resources</directory>
+        <directory>src/resources</directory>
         <excludes>
           <exclude>**/*.java</exclude>
         </excludes>
