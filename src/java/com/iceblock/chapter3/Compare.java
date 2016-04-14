@@ -21,9 +21,12 @@ public class Compare {
      */
 
     public static void main(String[] args) {
+        test3();
+    }
 
-		/*
-		 * Integer与Long封装类型的变量能直接比较的原因是，
+    public static void test1() {
+        /*
+         * Integer与Long封装类型的变量能直接比较的原因是，
 		 * 这两个变量比较时，内部自动转化为值比较，即基本类型比较了
 		 */
         Long l1 = 1l;
@@ -43,7 +46,7 @@ public class Compare {
         Long l5 = l3;
         System.out.println("l5 == l1 :" + (l5 == l1));
         System.out.println("l5 == l3 :" + (l5 == l3));
-		
+
 		/* 自动拆装箱 */
         Long l6 = 200L;
         Long l7 = 200L;
@@ -51,8 +54,8 @@ public class Compare {
         System.out.println("l7 == l6 :" + (l7 == l6));        // false
         System.out.println("l7+1 == l6+1 :" + (l7 + 1 == l6 + 1));        // true
         System.out.println("l8 == (l7+l6) :" + (l8 == (l7 + l6)));    // true
-		
-		
+
+
 		/*
 		 * Double与Float封装类型的变量
 		 * 比较大小时，必须要转化为double基本类型,
@@ -62,9 +65,6 @@ public class Compare {
         Double d2 = 2d;
         System.out.println(d1 == d2);    // false
         System.out.println(d1.equals(d2));    // true
-
-        test2();
-
     }
 
 
@@ -85,6 +85,29 @@ public class Compare {
         System.out.println(g == (a + b));
         System.out.println(g.equals(a + b));
         System.out.println(g.equals(a + h));
+    }
+
+    public static void test3() {
+        /* 自动拆装箱 */
+        long a1 = 200L;
+        Long a2 = 200L;
+        Long a3 = Long.valueOf(200);
+        Long a4 = new Long(200);
+
+        System.out.println("a1 == a2 :" + (a1 == a2));        // true
+        System.out.println("a2 == a3 :" + (a2 == a3));        // false
+        System.out.println("a3 == a4 :" + (a3 == a4));        // false
+        System.out.println("a3+1 == a4+1 :" + ((a3 + 1) == (a4 + 1)));        // false
+
+
+        long b1 = 100L;
+        Long b2 = 100L;
+        Long b3 = Long.valueOf(100);
+        Long b4 = new Long(100);
+
+        System.out.println("b1 == b2 :" + (b1 == b2));        // true
+        System.out.println("b2 == b3 :" + (b2 == b3));        // true
+        System.out.println("b3 == b4 :" + (b3 == b4));        // false
     }
 
 }
