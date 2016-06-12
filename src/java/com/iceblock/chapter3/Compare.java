@@ -15,13 +15,11 @@ package com.iceblock.chapter3;
 public class Compare {
 
     /**
-     * @author yan.liang
      * @date 2015年7月2日 下午7:56:16
-     * @Description 相等比较
      */
 
     public static void main(String[] args) {
-        test3();
+        test5();
     }
 
     public static void test1() {
@@ -108,6 +106,18 @@ public class Compare {
         System.out.println("b1 == b2 :" + (b1 == b2));        // true
         System.out.println("b2 == b3 :" + (b2 == b3));        // true
         System.out.println("b3 == b4 :" + (b3 == b4));        // false
+    }
+
+    /**
+     * 数值溢出测试
+     */
+    public static void test5() {
+        System.out.println(60 * 24 * 60 * 60 * 1000);   // 889032704
+        System.out.println(60 * 24 * 60 * 60 * 1000L);  // 5184000000
+
+        System.out.println(Long.toBinaryString(60 * 24 * 60 * 60 * 1000L));     // 100110100111111011001000000000000
+        System.out.println(Integer.toBinaryString(60 * 24 * 60 * 60 * 1000));   //    110100111111011001000000000000
+
     }
 
 }
